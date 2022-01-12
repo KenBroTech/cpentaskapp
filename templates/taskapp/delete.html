@@ -1,0 +1,23 @@
+{% extends 'partials/base.html' %} <br />
+{% block title %} Delete {% endblock %} {% block content %} <br />
+<div class="container">
+	<div class="row">
+		<div class="col-md-6 offset-md-3">
+			<div class="card">
+				<div class="card-body">
+					<h5>Delete?</h5>
+					<hr />
+					<div class="alert alert-danger">
+						<p>Are you sure you want to delete?</p>
+					</div>
+					<form method="POST">
+						{% csrf_token %}
+						<a class="btn btn-secondary" href="{% url 'taskapp-index' %}">No</a>
+						<input class="btn btn-danger" type="submit" value="Yes" />
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}
